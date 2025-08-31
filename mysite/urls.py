@@ -27,4 +27,5 @@ urlpatterns = [
     path('somthing/',views.somthing),
     path('login/',views.login),
 
+
 ]
