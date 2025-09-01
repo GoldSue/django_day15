@@ -48,3 +48,4 @@ dist/
 
 !.python-version
 !README.md
+!requirements.txt
