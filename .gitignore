@@ -1,0 +1,50 @@
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境
+.venv/
+env/
+venv/
+
+# Django 迁移文件（可选，不想追踪迁移历史时使用）
+# */migrations/
+
+# 本地配置文件
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# IDE 配置
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 环境变量文件
+.env
+*.env
+
+# 静态文件收集目录（Django collectstatic）
+/staticfiles/
+/media/
+
+# 单元测试、覆盖率
+.coverage
+.pytest_cache/
+htmlcov/
+
+# 编译、构建
+build/
+dist/
+*.egg-info/
+
+
+!.python-version
+!README.md
