@@ -39,3 +39,45 @@ def login(request):
         return redirect("/index/")
 
     return render(request,'login.html',{"error_message":"用户名或密码错误"})
+
+from app01.models import UserInfo,Department,Role
+def orm(request):
+    # Department.objects.create(title='财务部')
+    # Department.objects.create(title='销售部')
+    # Department.objects.create(title='技术部')
+    # UserInfo.objects.create(name='张三',password='123456',age=25)
+    # UserInfo.objects.create(name='李四',password='123456',age=25)
+    # UserInfo.objects.create(name='王五',password='123456')
+    # UserInfo.objects.filter(name='张三').delete()
+    # UserInfo.objects.all().delete()
+    # row_obj = UserInfo.objects.filter(age=25).first()
+    # print(row_obj.name,row_obj.age,row_obj.password)
+    # for obj in data:
+    #     print(obj.name,obj.age,obj.password)
+
+    # print(data)
+    # UserInfo.objects.filter(name='王五').update(age=18)
+
+    return HttpResponse("添加成功")
+
+def info_list(request):
+    data_list = UserInfo.objects.all()
+    print(data_list)
+
+    return render(request,'info_list.html',{"data_list":data_list})
+
+def info_add(request):
+    if request.method == "GET":
+        return render(request,'info_add.html')
+
+    name = request.POST.get("user")
+    password = request.POST.get("pwd")
+    age = request.POST.get("age")
+    UserInfo.objects.create(name=name,password=password,age=age)
+
+    return redirect("/info/list/")
+
+def info_delete(request):
+    nid = request.GET.get("nid")
+    UserInfo.objects.filter(id=nid).delete()
+    return redirect("/info/list/")

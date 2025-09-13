@@ -5,10 +5,14 @@ from django.db import models
 class UserInfo(models.Model):
     name = models.CharField(max_length=32)
     password = models.CharField(max_length=64)
-    age = models.IntegerField()
+    # size = models.IntegerField()
+    age = models.IntegerField(default=2)
+    # data = models.IntegerField(null=True, blank=True)
 
 class Department(models.Model):
     title = models.CharField(max_length=16)
+
+# Department.objects.create(title='销售部')
 
 class Role(models.Model):
     caption = models.CharField(max_length=16)
